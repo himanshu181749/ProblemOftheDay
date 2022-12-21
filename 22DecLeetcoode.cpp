@@ -1,3 +1,54 @@
+// class Solution {
+
+//     bool isBipartite(int src, vector<int>adj[], int colour[]){
+
+//         queue<int>q;
+//         colour[src]=1;
+//         q.push(src);
+
+//         while(!q.empty()){
+//             int node=q.front();
+//             q.pop();
+
+//             for(auto v : adj[node]){
+//                 if(colour[v]==-1){
+//                     colour[v]=1-colour[node];
+//                     q.push(v);
+//                 }
+//                 else if(colour[v]==colour[node])return false;
+//             }
+
+//         }
+//         return true;
+//     }
+
+// public:
+//     bool possibleBipartition(int nodes, vector<vector<int>>& dislikes) {
+//         vector<int>adj[nodes+1];
+
+//         for(int i=0; i<dislikes.size(); i++){
+//             int n1=dislikes[i][0];
+//             int n2=dislikes[i][2];
+
+
+//             adj[n1-1].push_back(n2-1);
+//             adj[n2-1].push_back(n1-1);
+
+//         }
+
+//         int colour[nodes];
+//         memset(colour, -1, sizeof(colour));
+
+//         for(int i=0; i<nodes; i++){
+//             if(colour[i]==-1){
+//                 return isBipartite(i,adj, colour);
+//             }
+//         }
+
+//         return true;
+//     }
+// };
+
 class Solution {
 public:
     bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
